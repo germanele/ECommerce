@@ -3,8 +3,17 @@
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
     document.getElementById("btn_singin").addEventListener("click", function(){
-        
-        window.location.href = "home.html"
+        let email = document.getElementById("inputEmail").value
+        let password = document.getElementById("inputPassword").value
+       if(email.length <1){
+           alert("Ingrese un Email")
+       }
+        if(password.length < 1){
+           alert("Ingrese una contraseña")
+       }
+        else{
+             localStorage.setItem('username',email);
+            window.location.href = "home.html"}
     });
 
 });
