@@ -43,8 +43,43 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     })
 
+    
+      getJSONData(PRODUCTS_URL).then(function(resultObj){
+          if (resultObj.status === "ok"){
+             products = resultObj.data
+            showRelatedProducts();
+            
+          }
+      });
+
 });
-//Funciton para mostrar informacion de los productos y su imagenes
+
+//Function para mostrar productos relacionados
+
+function showRelatedProducts(){
+  let relatedProductstoAppend = ``
+
+  for (let i = 0; i < productArray.relatedProducts.length; i++) {
+    console.log(products[productArray.relatedProducts[i]])
+    let cont = products[productArray.relatedProducts[i]]
+   relatedProductstoAppend =  `
+        <div class="relatedCards card text-center">
+        <img src="`+ cont.imgSrc + `" alt="imagen" style="width:100%" >
+        <div class="container">
+        <h5><b>`+ cont.name + `</b></h5> 
+        <p>`+ cont.description + `</p> 
+        <h6>`+ cont.currency + `$` + cont.cost + `</h6>
+        <a type="button" class="btn btn-dark" href="product-info.html" id="verprod">Ver producto</a><br><br>
+        </div>
+        </div>`
+
+        document.getElementById("relatedProd").innerHTML += relatedProductstoAppend
+    
+  }
+
+}
+
+//Funciton para mostrar informacion de los productos y su imagenes 
 
 function showProductInfo(){
     let ProductInfoToAppend= `

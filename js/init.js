@@ -40,18 +40,27 @@ var getJSONData = function(url){
     });
 }
 function showUser(){
+
+  //<a class="py-2 d-none d-md-inline-block" href="my-profile.html">Hola ${user} !</a> //
 var user = localStorage.getItem('username');
-var adduser = '<a class="py-2 d-none d-md-inline-block" href="my-profile.html">Hola ' + user + ' !</a>'
+var adduser = `<div class="dropdown">
+<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Hola <u>${user}</u>
+</button>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  <a class="dropdown-item" href="my-profile.html">Mi Perfil</a>
+  <a class="dropdown-item" href="cart.html">Mi Carrito</a>
+  <a class="dropdown-item" id="endSesion" href="index.html">Cerrar Sesion</a>
+ 
+</div>
+</div>`
 document.getElementById('nav').innerHTML += adduser
 }
 showUser();
+document.getElementById("endSesion").addEventListener("click", function(){
+  localStorage.removeItem("username")
+
+});
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-
-
-document.addEventListener("DOMContentLoaded", function(e){
-  
-  
-
-});
