@@ -12,22 +12,7 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
@@ -43,14 +28,37 @@
       
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div class="container">
+    <div class="text-center">Shopping cart</div>
+    <hr>
+    <div id="shop-cart" class="col">
     </div>
+    <div class="row">
+      <div class="col-4">
+        <h5 class="mb-3">Tipo de Envio</h5>
+                    <div class="d-block my-3">
+                      <div class="custom-control custom-radio">
+                        <input id="goldradio" name="publicationType" type="radio" class="custom-control-input radioShipping"  value="0.013" required="">
+                        <label class="custom-control-label" for="goldradio">Gold (13%)</label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input radioShipping" value="0.07" required="">
+                        <label class="custom-control-label" for="premiumradio">Premium (7%)</label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input id="standardradio" name="publicationType" type="radio" class="custom-control-input radioShipping" value="0.03" required="">
+                        <label class="custom-control-label" for="standardradio">Estándar (3%)</label>
+                      </div>
+                      </div></div>
+      <div class="col-4"></div>
+      <div class="col-4">Subtotal  <span id="subs"></span>
+      <div class="row" ><button type="button" class="btn btn-success">Checkout</button></div></div>
+      
+    </div>
+  
   </div>
+  
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>

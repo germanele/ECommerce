@@ -60,7 +60,6 @@ function showRelatedProducts(){
   let relatedProductstoAppend = ``
 
   for (let i = 0; i < productArray.relatedProducts.length; i++) {
-    console.log(products[productArray.relatedProducts[i]])
     let cont = products[productArray.relatedProducts[i]]
    relatedProductstoAppend =  `
         <div class="relatedCards card text-center">
