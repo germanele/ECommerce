@@ -58,7 +58,7 @@ document.getElementById('nav').innerHTML += adduser
 }
 showUser();
 document.getElementById("endSesion").addEventListener("click", function(){
-  localStorage.removeItem("username")
+  localStorage.clear();
 
 });
 //Función que se ejecuta una vez que se haya lanzado el evento de

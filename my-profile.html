@@ -11,23 +11,6 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
@@ -40,17 +23,39 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      
-    </div>
+     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"></div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Mi Perfil</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-12"><label class="labels">Nombre</label><input id="iptName" type="text" class="form-control" placeholder="Nombre completo" readonly value=""></div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-md-12"><label class="labels">Email</label><input id="iptEmail" type="text" class="form-control" placeholder="Email" readonly value=""></div>
+                  <div class="col-md-12"><label class="labels">Edad</label><input id="iptAge" type="text" class="form-control" placeholder="Edad" readonly value=""></div>
+                  <div class="col-md-12"><label class="labels">Numero de Telefono</label><input id="iptTel" type="text" class="form-control" placeholder="Numero de Telefono" readonly value=""></div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-6 mt-5 text-center"><button class="btn btn-secondary profile-button" type="button">Cancelar</button></div>
+                <div class="col-6 mt-5 text-center">
+                  <button id="modify" class="btn btn-primary profile-button"  type="button">Modificar</button>
+                  <button id="saveChanges" class="btn btn-primary profile-button" hidden type="button">Guardar cambios</button>
+                </div>
+              </div>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
+
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>

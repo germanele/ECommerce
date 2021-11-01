@@ -89,8 +89,12 @@ document.addEventListener("DOMContentLoaded", function(e){
     
         showProductsList();
     });
+
+   
     
 });
+
+
 function showProductsList (){
             
     let htmlContentToAppend = "";
@@ -99,25 +103,44 @@ function showProductsList (){
 
         if (((minCost == undefined) || (minCost != undefined && product.cost >= minCost)) &&
             ((maxCost == undefined) || (maxCost != undefined && product.cost <= maxCost))){
+            //     `
+            //     <a href="product-info.html" class="list-group-item list-group-item-action">
+            //     <div class="row">
+            //         <div class="col-3">
+            //             <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
+            //         </div>
+            //         <div class="col">
+            //             <div class="d-flex w-100 justify-content-between">
+            //                 <h4 class="mb-1">`+ product.name +`</h4>
+            //                 <small class="text-muted">` + product.soldCount + ` artículos vendidos</small>
+            //             </div>
+            //             <p class="mb-1">` + product.description + `</p>
+            //             <br>
+            //             <p class="mb-1">Precio `+ product.currency + ` ` + product.cost + `</p>
+            //         </div>
+            //     </div>
+            // </a>
+            // `
 
-            htmlContentToAppend += `
-            <a href="product-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">`+ product.name +`</h4>
-                            <small class="text-muted">` + product.soldCount + ` artículos vendidos</small>
-                        </div>
-                        <p class="mb-1">` + product.description + `</p>
-                        <br>
-                        <p class="mb-1">Precio `+ product.currency + ` ` + product.cost + `</p>
-                    </div>
+            htmlContentToAppend +=  ` <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail" src="` + product.imgSrc + `">
+              <div class="card-body">
+              <b class="card-text">`+ product.name +`</b>
+                <p class="card-text">` + product.description + `</p>
+                <p class="mb-1">Precio `+ product.currency + ` ` + product.cost + `</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.href='product-info.html'" >View</button>
+                    
+                  </div>
+                  <small class="text-muted">` + product.soldCount + ` articulos vendidos</small>
                 </div>
-            </a>
-            `
+              </div>
+            </div>
+          </div>`
+
+
         }
     }
 
