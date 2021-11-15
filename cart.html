@@ -25,7 +25,7 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      
+
     </div>
   </nav>
   <div class="container">
@@ -36,28 +36,92 @@
     <div class="row">
       <div class="col-4">
         <h5 class="mb-3">Tipo de Envio</h5>
-                    <div class="d-block my-3">
-                      <div class="custom-control custom-radio">
-                        <input id="goldradio" name="publicationType" type="radio" class="custom-control-input radioShipping"  value="0.013" required="">
-                        <label class="custom-control-label" for="goldradio">Gold (13%)</label>
-                      </div>
-                      <div class="custom-control custom-radio">
-                        <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input radioShipping" value="0.07" required="">
-                        <label class="custom-control-label" for="premiumradio">Premium (7%)</label>
-                      </div>
-                      <div class="custom-control custom-radio">
-                        <input id="standardradio" name="publicationType" type="radio" class="custom-control-input radioShipping" value="0.03" required="">
-                        <label class="custom-control-label" for="standardradio">Estándar (3%)</label>
-                      </div>
-                      </div></div>
+        <div class="d-block my-3">
+          <div class="custom-control custom-radio">
+            <input id="goldradio" name="publicationType" type="radio" class="custom-control-input radioShipping"
+              value="0.013" required="">
+            <label class="custom-control-label" for="goldradio">Gold (13%)</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input radioShipping"
+              value="0.07" required="">
+            <label class="custom-control-label" for="premiumradio">Premium (7%)</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input id="standardradio" name="publicationType" type="radio" class="custom-control-input radioShipping"
+              value="0.03" required="">
+            <label class="custom-control-label" for="standardradio">Estándar (3%)</label>
+          </div>
+        </div>
+      </div>
       <div class="col-4"></div>
-      <div class="col-4">Subtotal  <span id="subs"></span>
-      <div class="row" ><button type="button" class="btn btn-success">Checkout</button></div></div>
-      
+      <div class="col-4">Subtotal <span id="subs"></span>
+        <div class="row"><button type="button" class="btn btn-success" onclick="checkOut()">Checkout</button></div>
+      </div>
+
+
+
     </div>
-  
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+      Metodo de Pago
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Ingrese un metodo de pago</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <input type="radio" name="type" class="payMethod" id="cc" > <h5>Tarjeta de Credito</h5>
+
+              </div>
+              <div class="row">
+                <input type="text" class="col-8" id="cardnum" placeholder="Numero de tarjeta" >
+              </div>
+              <div class="row">
+                <input type="text" placeholder="Nombre del Titular" id="cardname" class="col-8" >
+              </div>
+              <div class="row">
+                Vencimiento
+              </div>
+              <div class="row">
+                <input type="date"  id="carddate" placeholder="Fecha de Vencimientos" class="col-5" >
+                <input type="text" placeholder="CCV" id="cardccv" class="col-5"  maxlength="3" >
+                <div class="row"></div>
+
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+
+                <input type="radio" name="type" class="payMethod" id="ba" > <h5>Cuenta Bancaria</h5>
+              </div>
+              <div class="row"><input type="text" id="bankNumber" placeholder="Numero de Cuenta Bancaria" class="col-9"></div>
+
+            </div>
+              
+              
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" id="validProced" >Continuar</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  
+
 
   <div id="spinner-wrapper">
     <div class="lds-ring">
